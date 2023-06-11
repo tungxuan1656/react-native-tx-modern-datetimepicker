@@ -1,5 +1,8 @@
 # React Native TX Modern DateTimePicker
 
+<img src = "screenshots/datetimepicker.jpg" width ="400" /> <img src = "screenshots/datepicker.jpg" width ="400" />  
+<img src = "screenshots/monthyearpicker.jpg" width ="400" /> <img src = "screenshots/timepicker.jpg" width ="400" />
+
 Forked from HosseinShabani/react-native-modern-datepicker
 > A customizable calendar, time & month picker for React Native (including Persian Jalaali calendar & locale). For more information, please visit [website](https://hosseinshabani.github.io/react-native-modern-datepicker)
 
