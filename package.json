@@ -1,0 +1,53 @@
+{
+  "name": "react-native-tx-modern-datetimepicker",
+  "version": "1.0.0",
+  "description": "Fix bugs and improve for lib: HosseinShabani/react-native-modern-datepicker. A customizable calendar, time & month picker for React Native",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "playground": "cd example && react-native start"
+  },
+  "files": [
+    "src"
+  ],
+  "author": "tungxuan1656",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HosseinShabani/react-native-modern-datepicker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HosseinShabani/react-native-modern-datepicker/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-native-datepicker",
+    "datepicker",
+    "calendar",
+    "react-native-calendar",
+    "react-native-calendars",
+    "time-picker",
+    "react-native-time-picker",
+    "month-picker",
+    "react-native-month-picker",
+    "persian-calendar",
+    "customizable-datepicker",
+    "react-native-tx"
+  ],
+  "dependencies": {
+    "moment": "^2.29.4",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.59"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "@babel/core": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "eslint": "^6.3.0",
+    "metro-react-native-babel-preset": "^0.56.0"
+  }
+}
