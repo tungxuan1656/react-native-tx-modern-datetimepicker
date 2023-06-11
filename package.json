@@ -10,13 +10,13 @@
   "files": [
     "src"
   ],
-  "author": "tungxuan1656",
+  "author": "tungxuan1656 <dxtung98@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HosseinShabani/react-native-modern-datepicker.git"
+    "url": "https://github.com/tungxuan1656/react-native-tx-modern-datetimepicker.git"
   },
   "bugs": {
-    "url": "https://github.com/HosseinShabani/react-native-modern-datepicker/issues"
+    "url": "https://github.com/tungxuan1656/react-native-tx-modern-datetimepicker/issues"
   },
   "license": "MIT",
   "keywords": [
@@ -49,5 +49,9 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "eslint": "^6.3.0",
     "metro-react-native-babel-preset": "^0.56.0"
+  },
+  "homepage": "https://github.com/tungxuan1656/react-native-tx-modern-datetimepicker/#readme",
+  "directories": {
+    "example": "example"
   }
 }

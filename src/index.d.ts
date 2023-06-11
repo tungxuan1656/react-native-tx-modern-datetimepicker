@@ -76,6 +76,6 @@ export interface ModernDatepickerProps {
 	}
 }
 
-export default function(props: ModernDatepickerProps): JSX.Element | React.ReactNode
+export default function(props: ModernDatepickerProps): JSX.Element
 export function getToday(): string
 export function getFormatedDate(date?: Date, format?: string): string

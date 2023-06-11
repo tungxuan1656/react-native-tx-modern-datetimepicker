@@ -1,7 +1,7 @@
 import moment from 'moment'
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import DatePicker from 'react-native-modern-datepicker'
+import DatePicker from 'react-native-tx-modern-datetimepicker'
 
 const App = (props: any) => {
 	return (
