@@ -6,6 +6,14 @@
 Forked from HosseinShabani/react-native-modern-datepicker
 > A customizable calendar, time & month picker for React Native (including Persian Jalaali calendar & locale). For more information, please visit [website](https://hosseinshabani.github.io/react-native-modern-datepicker)
 
+## Installation
+```
+npm i react-native-tx-modern-datetimepicker
+```
+```
+yarn add react-native-tx-modern-datetimepicker
+```
+
 ## Fixed and improve
 1. Fixed year input: user can now clear all year in input text and it also handle if the user remove focus on input text without value, the default value will be the current year.
 https://github.com/HosseinShabani/react-native-modern-datepicker/pull/133
