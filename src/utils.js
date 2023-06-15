@@ -3,8 +3,8 @@ import { Animated, Easing, I18nManager } from 'react-native'
 import moment from 'moment'
 
 const m = moment()
-const gregorianConfigs = {
-	dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+const defaultConfigs = {
+	dayNames: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 	dayNamesShort: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
 	monthNames: [
 		'January',
@@ -37,7 +37,7 @@ class utils {
 			maximumDate,
 			reverse: reverse === 'unset' ? false : reverse,
 		}
-		this.config = gregorianConfigs
+		this.config = defaultConfigs
 		this.config = { ...this.config, ...configs }
 		if (mode === 'time' || mode === 'dateTimePicker') {
 			this.config.selectedFormat = this.config.dateFormat + ' ' + this.config.timeFormat
@@ -200,6 +200,15 @@ class utils {
 		}
 
 		return [{ lastDate, shownAnimation, hiddenAnimation }, changeMonthAnimation]
+	}
+
+	compareDate = (a, b) => {
+		const length = (this.config['dateFormat'] ?? '').length
+		if (length > 0 && typeof a === 'string' && typeof b === 'string') {
+			return a.substring(0, length) === b.substring(0, length)
+		} else {
+			return a === b
+		}
 	}
 }
 

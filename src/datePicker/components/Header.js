@@ -109,7 +109,7 @@ const Header = ({ changeMonth }) => {
 							}
 						>
 							<Text style={style.headerText}>
-								{utils.toPersianNumber(utils.getTime(mainState.activeDate))}
+								{utils.toPersianNumber(utils.getTime(mainState.selectedDate))}
 							</Text>
 						</TouchableOpacity>
 					)}
@@ -127,7 +127,7 @@ const Header = ({ changeMonth }) => {
 					<Text style={style.headerText}>{utils.getMonthYearText(lastDate).split('#')[1]}</Text>
 					{mode === 'dateTimePicker' && (
 						<Text style={style.headerText}>
-							{utils.toPersianNumber(utils.getTime(mainState.activeDate))}
+							{utils.toPersianNumber(utils.getTime(mainState.selectedDate))}
 						</Text>
 					)}
 				</Animated.View>

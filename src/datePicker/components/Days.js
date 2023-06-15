@@ -11,9 +11,12 @@ const Days = () => {
 	const days = useMemo(() => utils.getMonthDays(mainState.activeDate))
 
 	const onSelectDay = (date) => {
+		let arr = (mainState.selectedDate ?? '').split(' ')
+		arr[0] = (date ?? '').split(' ')[0]
+		let newDate = arr.join(' ')
 		setMainState({
 			type: 'set',
-			selectedDate: date,
+			selectedDate: newDate,
 		})
 		onDateChange(utils.getFormated(utils.getDate(date), 'dateFormat'))
 	}
@@ -40,7 +43,7 @@ const Days = () => {
 								{
 									borderRadius: itemSize / 2,
 								},
-								mainState.selectedDate === day.date && style.dayItemSelected,
+								utils.compareDate(mainState.selectedDate, day.date) && style.dayItemSelected,
 							]}
 							onPress={() => !day.disabled && onSelectDay(day.date)}
 							activeOpacity={0.8}
@@ -49,7 +52,7 @@ const Days = () => {
 								style={[
 									style.dayText,
 									day.isToday && style.dayToday,
-									mainState.selectedDate === day.date && style.dayTextSelected,
+									utils.compareDate(mainState.selectedDate, day.date) && style.dayTextSelected,
 									day.disabled && style.dayTextDisabled,
 								]}
 							>

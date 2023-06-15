@@ -6,7 +6,7 @@
 import { CSSProperties } from 'react'
 import { ImageStyle, StyleProp, TextInput, TextStyle, ViewStyle } from 'react-native'
 
-export interface ModernDatePickerConfigProps {
+export interface ModernDateTimePickerConfig {
 	dayNames?: string[]
 	dayNamesShort?: string[]
 	monthNames?: string[]
@@ -21,7 +21,44 @@ export interface ModernDatePickerConfigProps {
 	textSeparatorMonthYear?: string
 }
 
-export interface ModernDatepickerProps {
+export interface ModernDateTimePickerOptions {
+	backgroundColor?: string
+	textHeaderColor?: string
+	textDefaultColor?: string
+	selectedTextColor?: string
+	mainColor?: string
+	textSecondaryColor?: string
+	borderColor?: string
+	headerBorderWidth?: number
+	defaultFont?: string
+	headerFont?: string
+	textFontSize?: number
+	textHeaderFontSize?: number
+	headerAnimationDistance?: number
+	daysAnimationDistance?: number
+	textHeaderStyle?: StyleProp<TextStyle>
+	textDayNamesStyle?: StyleProp<TextStyle>
+	textDayStyle?: StyleProp<TextStyle>
+	textDaySelectedStyle?: StyleProp<TextStyle>
+	textTodayStyle?: StyleProp<TextStyle>
+	textMonthStyle?: StyleProp<TextStyle>
+	textActionTimeStyle?: StyleProp<TextStyle>
+	viewDaysNameStyle?: StyleProp<ViewStyle>
+	viewDaysContainerStyle?: StyleProp<ViewStyle>
+	viewDayItemStyle?: StyleProp<ViewStyle>
+	viewDayItemSelectedStyle?: StyleProp<ViewStyle>
+	viewHeaderItemStyle?: StyleProp<ViewStyle>
+	viewHeaderContainerStyle?: StyleProp<ViewStyle>
+	viewButtonActionSelectTimeStyle?: StyleProp<ViewStyle>
+	viewButtonActionCancelTimeStyle?: StyleProp<ViewStyle>
+	viewButtonsActionTimeStyle?: StyleProp<ViewStyle>
+	viewMonthItemSelectedStyle?: StyleProp<ViewStyle>
+	viewMonthItemStyle?: StyleProp<ViewStyle>
+	imageArrow?: StyleProp<ImageStyle>
+	inputYearStyle?: StyleProp<TextInput>
+}
+
+export interface ModernDateTimePickerProps {
 	onSelectedChange?: (dateString: string) => void
 	onMonthYearChange?: (dateString: string) => void
 	onTimeChange?: (dateString: string) => void
@@ -37,45 +74,10 @@ export interface ModernDatepickerProps {
 	current?: string
 	selected?: string
 	locale?: string
-	configs?: ModernDatePickerConfigProps
-	options?: {
-		backgroundColor?: string
-		textHeaderColor?: string
-		textDefaultColor?: string
-		selectedTextColor?: string
-		mainColor?: string
-		textSecondaryColor?: string
-		borderColor?: string
-		headerBorderWidth?: number
-		defaultFont?: string
-		headerFont?: string
-		textFontSize?: number
-		textHeaderFontSize?: number
-		headerAnimationDistance?: number
-		daysAnimationDistance?: number
-		textHeaderStyle?: StyleProp<TextStyle>
-		textDayNamesStyle?: StyleProp<TextStyle>
-		textDayStyle?: StyleProp<TextStyle>
-		textDaySelectedStyle?: StyleProp<TextStyle>
-		textTodayStyle?: StyleProp<TextStyle>
-		textMonthStyle?: StyleProp<TextStyle>
-		textActionTimeStyle?: StyleProp<TextStyle>
-		viewDaysNameStyle?: StyleProp<ViewStyle>
-		viewDaysContainerStyle?: StyleProp<ViewStyle>
-		viewDayItemStyle?: StyleProp<ViewStyle>
-		viewDayItemSelectedStyle?: StyleProp<ViewStyle>
-		viewHeaderItemStyle?: StyleProp<ViewStyle>
-		viewHeaderContainerStyle?: StyleProp<ViewStyle>
-		viewButtonActionSelectTimeStyle?: StyleProp<ViewStyle>
-		viewButtonActionCancelTimeStyle?: StyleProp<ViewStyle>
-		viewButtonsActionTimeStyle?: StyleProp<ViewStyle>
-		viewMonthItemSelectedStyle?: StyleProp<ViewStyle>
-		viewMonthItemStyle?: StyleProp<ViewStyle>
-		imageArrow?: StyleProp<ImageStyle>
-		inputYearStyle?: StyleProp<TextInput>
-	}
+	configs?: ModernDateTimePickerConfig
+	options?: ModernDateTimePickerOptions
 }
 
-export default function(props: ModernDatepickerProps): JSX.Element
-export function getToday(): string
-export function getFormatedDate(date?: Date, format?: string): string
+export default function(props: ModernDateTimePickerProps): JSX.Element
+// export function getToday(): string
+// export function getFormatedDate(date?: Date, format?: string): string

@@ -14,7 +14,7 @@ import { useCalendar } from '../DatePicker'
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList)
 
-const TimeScroller = ({ title, data, onChange }) => {
+const TimeScroller = ({ title, data, onChange, initValue }) => {
 	const { options, utils } = useCalendar()
 	const [itemSize, setItemSize] = useState(0)
 	const style = styles(options)
@@ -22,6 +22,7 @@ const TimeScroller = ({ title, data, onChange }) => {
 	const scrollListener = useRef(null)
 	const active = useRef(0)
 	data = ['', '', ...data, '', '']
+	const initIndex = data.indexOf(initValue)
 
 	useEffect(() => {
 		scrollListener.current && clearInterval(scrollListener.current)
@@ -101,7 +102,11 @@ const TimeScroller = ({ title, data, onChange }) => {
 					onChange(data[index + 2])
 				}}
 				keyExtractor={(_, i) => String(i)}
+				getItemLayout={(_, index) => {
+					return { index, length: itemSize, offset: itemSize * index }
+				}}
 				renderItem={renderItem}
+				initialScrollIndex={Math.max(0, initIndex - 2)}
 				inverted={I18nManager.isRTL}
 				contentContainerStyle={
 					I18nManager.isRTL && {
@@ -129,11 +134,10 @@ const SelectTime = () => {
 	const openAnimation = useRef(new Animated.Value(0)).current
 
 	useEffect(() => {
-		show &&
-			setTime({
-				minute: 0,
-				hour: 0,
-			})
+		if (show) {
+			const dateTime = utils.getDate(mainState.selectedDate)
+			setTime({ minute: +dateTime.get('minute'), hour: +dateTime.get('hour') })
+		}
 	}, [show])
 
 	useEffect(() => {
@@ -191,11 +195,13 @@ const SelectTime = () => {
 				title={utils.config.hour}
 				data={Array.from({ length: 24 }, (x, i) => i)}
 				onChange={(hour) => setTime({ ...time, hour })}
+				initValue={time.hour}
 			/>
 			<TimeScroller
 				title={utils.config.minute}
 				data={Array.from({ length: 60 / minuteInterval }, (x, i) => i * minuteInterval)}
 				onChange={(minute) => setTime({ ...time, minute })}
+				initValue={time.minute}
 			/>
 			<View style={style.footer}>
 				<TouchableOpacity style={style.button} activeOpacity={0.8} onPress={selectTime}>
