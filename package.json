@@ -1,6 +1,6 @@
 {
   "name": "react-native-tx-modern-datetimepicker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fix bugs and improve for lib: HosseinShabani/react-native-modern-datepicker. A customizable calendar, time & month picker for React Native",
   "main": "src/index.js",
   "types": "src/index.d.ts",
